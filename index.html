@@ -175,6 +175,55 @@
             height: 40px;
             animation: spin 1s linear infinite;
         }
+        /* Contact Design */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            outline: none;
+        }
+
+        form label {
+            text-align: left;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        form button {
+            background: #00aaff;
+            color: white;
+            padding: 10px 20px;
+            border: 1px solid #00aaff;
+            border-radius: 5px;
+            width: 100px;
+            margin: auto;
+            font-size: 16px;
+            cursor: pointer;
+            transition: linear 0.1s;
+        }
+
+        form button:hover {
+            background: transparent;
+            color: #00aaff;
+        }
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -323,9 +372,15 @@
         <h2>Contact Me</h2>
         <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="2c4394d0-8597-4206-8405-a037a40ec569">
+            <label for="name">Name</label>
             <input type="text" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email</label>
             <input type="email" name="email" placeholder="Your Email" required>
+
+            <label for="message">Message</label>
             <textarea name="message" placeholder="Your Message" required></textarea>
+
             <button type="submit">Send</button>
         </form>
     </section>
